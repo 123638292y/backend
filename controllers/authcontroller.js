@@ -1,7 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 
-// Inscription d'un utilisateur
 exports.registerUser = async (req, res) => {
   try {
     const { firstName, lastName, username, email, password, confirmPassword, agreeToTerms } = req.body;
@@ -28,6 +27,7 @@ exports.registerUser = async (req, res) => {
 
     res.status(201).json({ message: "User registered successfully." });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Server error. Please try again later." });
   }
 };
