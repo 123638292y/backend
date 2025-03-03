@@ -1,11 +1,11 @@
+
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const connectDB = require('./lib/lib');
+const connectDB = require('./lib/lib.js'); 
 const authRoutes = require('./routers/authrouter');
 require('dotenv').config();
 
-// Connexion à MongoDB
 connectDB();
 
 const app = express();
